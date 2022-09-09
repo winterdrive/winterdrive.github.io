@@ -26,51 +26,76 @@
     background: url(loading.gif) center center no-repeat;
     background-size: 20%;
   }
+
+  .我的按鈕 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: xxx-large;
+    height: 100%;
+    color: rgb(255, 255, 255);
+  }
 </style>
 
 <body>
   <div class="main-contain">
-    <div class="container" style="margin-top:10%;">
+    <div class="container" style="margin-top:5%;">
       <div class="row">
         <div class="col-sm-12">
           <section id="home" class="flex height-fix" style="font-size: large; color: aliceblue;">
             <div class="flex">
               <br><br>
-              <span style="font-size:200%; margin-left:25%;">Hello, I'm</span> &nbsp;
-              <span style="font-size:300%; color: coral;">Winston Tang</span>&nbsp;,<br>
-              <span class="highlight" style="font-size:200%;margin-left:35%">I'm a full-stack web developer.</span>
+              <div style="font-size:3rem; text-align: left;">Hello, I'm</div> &nbsp;
+              <span style="font-size:3rem; margin-left:15%;color: coral;">Winston Tang</span>&nbsp;<span
+                style="font-size:3rem;">,</span><br>
+              <div style="font-size:3rem; text-align: right; ">a full-stack web developer.</div>
             </div>
-            <br><br><br><br>
+            <br><br>
           </section>
         </div>
       </div>
     </div>
     <div class="container" style="margin-bottom:20%">
-      <div class="row align-items-center">
-        <div class="col">
-          <button style="width:100%;height:3em" type="button" class="btn btn-primary" data-toggle="modal"
-            data-target=".簡介"><strong>About</strong></button>
+      <div class="row">
+        <div class="col" style="margin-bottom:3%">
+          <button style="width:100%;height:10em" type="button" class="btn btn-outline-info" disabled>
+            <div class="我的按鈕 btn btn-outline-info" data-toggle="modal" data-target=".簡介">
+              <strong><span>About</span></strong></div>
+          </button>
         </div>
-        <div class="col">
-          <button style="width:100%;height:3em" type="button" class="btn btn-primary" data-toggle="modal"
-            data-target=".力扣"><strong>My LeetCode</strong></button>
+        <div class="col" style="margin-bottom:3%">
+          <button style="width:100%;height:10em" type="button" class="btn btn-outline-info" disabled>
+            <div class="我的按鈕 btn btn-outline-info" data-toggle="modal" data-target=".專案">
+              <strong><span>LeetCode</span></strong>
+            </div>
+          </button>
         </div>
       </div>
-      <div class="row align-items-center">
-        <div class="col"><br></div>
-        <div class="col"><br></div>
-      </div>
-      <div class="row align-items-center">
-        <div class="col">
-          <button style="width:100%;height:3em" type="button" class="btn btn-primary" data-toggle="modal"
-            data-target=".專案"><strong>Projects</strong></button>
+
+      <div class="row">
+        <div class="col" style="margin-bottom:3%">
+          <button style="width:100%;height:10em" type="button" disabled class="btn btn-outline-info" disabled>
+            <div class="我的按鈕 btn btn-outline-info" data-toggle="modal" data-target=".專案" >
+              <strong><span>Projects</strong>
+            </div>
+          </button>
         </div>
-        <div class="col">
-          <button style="width:100%;height:3em" type="button" class="btn btn-primary">
-            <span class="btn btn-secondary" data-toggle="modal" data-target=".中文版"
-              style="width:40%;font-size:xx-small"><strong>簡歷</strong></span>
-            <span class="btn btn-secondary" data-toggle="modal" data-target=".英文版"
-              style="width:50%;font-size:xx-small"><strong>RESUME</strong></span>
+        <div class="col" style="margin-bottom:3%">
+          <button style="width:100%;height:10em" type="button" class="btn btn-outline-info" disabled>
+            <div class="btn btn-outline-info" data-toggle="modal" data-target=".中文版" style="width:40%;
+              font-size:xxx-large;
+              height:70%;
+              color: rgb(255, 255, 255);">
+              <strong><div class="mt-1">簡歷</div></strong>
+            </div>
+            <div class="btn"></div>
+            <div class="btn btn-outline-info" data-toggle="modal" data-target=".英文版" style="width:40%;
+              font-size:x-large;
+              height:70%;
+              color: rgb(255, 255, 255);">
+              <strong ><div class="mt-4">RESUME</div></strong>
+            </div>
           </button>
         </div>
       </div>
