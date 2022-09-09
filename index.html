@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>WinstonTang</title>
+  <link rel="icon" type="image/x-icon" href="loading.gif">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
@@ -36,6 +37,10 @@
     height: 100%;
     color: rgb(255, 255, 255);
   }
+
+  a {
+    text-decoration: none !important;
+  }
 </style>
 
 <body>
@@ -47,11 +52,12 @@
             <div class="flex">
               <br>
               <div style="font-size:3rem; text-align: left;"><span> Wellcome, I'm</span></div> &nbsp;
-              <div style="font-size:3rem; text-align: center;"><span style="color: coral;"> Winston Tang</span>&nbsp;,</div>
+              <div style="font-size:3rem; text-align: center;"><span style="color: coral;"> Winston Tang</span>&nbsp;,
+              </div>
               <div style="font-size:3rem; text-align: right; "><span> a full-stack web developer.</span></div>
               <br><br><br>
             </div>
-            
+
           </section>
         </div>
       </div>
@@ -61,13 +67,17 @@
         <div class="col" style="margin-bottom:3%">
           <button style="width:100%;height:10em" type="button" class="btn btn-outline-info" disabled>
             <div class="我的按鈕 btn btn-outline-info" data-toggle="modal" data-target=".簡介">
-              <strong><span>About</span></strong></div>
+              <strong><span>About</span></strong>
+            </div>
           </button>
         </div>
         <div class="col" style="margin-bottom:3%">
           <button style="width:100%;height:10em" type="button" class="btn btn-outline-info" disabled>
-            <div class="我的按鈕 btn btn-outline-info" data-toggle="modal" data-target=".專案">
-              <strong><span>LeetCode</span></strong>
+            <div class="我的按鈕 btn btn-outline-info">
+              <a href="https://github.com/winterdrive/myLeetHub" target="_blank">
+              <!-- <div class="我的按鈕 btn btn-outline-info" data-toggle="modal" data-target=".力扣"></div> -->
+                <strong><span style="color:aliceblue;">MyLeetHub</span></strong>
+              </a>
             </div>
           </button>
         </div>
@@ -76,26 +86,31 @@
       <div class="row">
         <div class="col" style="margin-bottom:3%">
           <button style="width:100%;height:10em" type="button" disabled class="btn btn-outline-info" disabled>
-            <div class="我的按鈕 btn btn-outline-info" data-toggle="modal" data-target=".專案" >
+            <div class="我的按鈕 btn btn-outline-info" data-toggle="modal" data-target=".專案">
               <strong><span>Projects</strong>
             </div>
           </button>
         </div>
         <div class="col" style="margin-bottom:3%">
           <button style="width:100%;height:10em" type="button" class="btn btn-outline-info" disabled>
-            <div class="btn btn-outline-info" data-toggle="modal" data-target=".中文版" style="width:40%;
+            <div class="btn btn-outline-info" data-toggle="modal" data-target=".中文版" 
+            style="width:45%;
               font-size:xxx-large;
-              height:70%;
+              height:100%;
               color: rgb(255, 255, 255);">
-              <strong><div class="mt-1">履歷</div></strong>
-              
+              <strong>
+                <div class="mt-4">履歷</div>
+              </strong>
             </div>
             <div class="btn"></div>
-            <div class="btn btn-outline-info" data-toggle="modal" data-target=".英文版" style="width:40%;
+            <div class="btn btn-outline-info" data-toggle="modal" data-target=".英文版" 
+            style="width:45%;
               font-size: xxx-large;
-              height:70%;
+              height:100%;
               color: rgb(255, 255, 255);">
-              <strong ><div class="mt-1" >CV</div></strong>
+              <strong>
+                <div class="mt-4">CV</div>
+              </strong>
             </div>
           </button>
         </div>
@@ -117,7 +132,7 @@
       </div>
     </div>
 
-    <div class="modal fade 力扣" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade 力扣" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="等待動畫" style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
@@ -125,13 +140,13 @@
       border-radius: 8px; will-change: transform;">
             <iframe loading="lazy"
               style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-              src="https://drive.google.com/file/d/105C_1sH3peDMI2i4wTnMZFuB_9o4ytkJ/view?usp=sharing"
+              src="https://github.com/winterdrive/myLeethub"
               allowfullscreen="allowfullscreen" allow="fullscreen">
             </iframe>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="modal fade 專案" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
