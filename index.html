@@ -28,6 +28,10 @@
     background-size: 20%;
   }
 
+  .等待動畫:hover {
+    background-color: lightgray;
+  }
+
   .我的按鈕 {
     display: flex;
     justify-content: center;
@@ -41,6 +45,9 @@
   a {
     text-decoration: none !important;
   }
+
+
+
 </style>
 
 <body>
@@ -137,13 +144,13 @@
 
     <div class="modal fade 專案" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
       <!-- <div class="modal-fullscreen"> -->
-        <div class="modal-dialog modal-lg ">
-          <div class="modal-content">
-            <div class="container">
-              <div class="row">
-                <div class="col-6 shadow-lg p-3 mt-3 bg-body rounded text-center">
-                  <h5>ERP SYSTEM</h1>
-                    <p style="word-wrap:break-word;">Groovy on Grails with GSP</p>
+      <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-6 shadow-lg p-3 mt-3 bg-body rounded text-center">
+                <h5>ERP SYSTEM</h1>
+                  <p style="word-wrap:break-word;">Groovy on Grails with GSP</p>
                   <div class="等待動畫" style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
                 padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
                 border-radius: 8px; will-change: transform;">
@@ -153,10 +160,10 @@
                     </iframe>
                   </div>
                   <a href="https://test-erp.fontrip.com/fontrip" class="btn btn-primary">Go to ERP</a>
-                </div>
-                <div class="col-6 shadow-lg p-3 mt-3 bg-body rounded text-center">
-                  <h5>ERP SYSTEM</h1>
-                  <p style="word-wrap:break-word;">ERP SYSTEM</p>
+              </div>
+              <div class="col-6 shadow-lg p-3 mt-3 bg-body rounded text-center">
+                <h5>TW FERN</h1>
+                  <p style="word-wrap:break-word;">PHP with MariaDB</p>
                   <div class="等待動畫" style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
                 padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
                 border-radius: 8px; will-change: transform;">
@@ -166,72 +173,73 @@
                     </iframe>
                   </div>
                   <a href="https://www.twfern.org/" class="btn btn-primary">Go to TPG</a>
-                </div>
-                <div class="col-6 shadow-lg p-3 mt-3 bg-body rounded text-center">
-                  <h5>ERP SYSTEM</h1>
-                  <p style="word-wrap:break-word;">ERP SYSTEM</p>
+              </div>
+              <div class="col-6 shadow-lg p-3 mt-3 bg-body rounded text-center">
+                <h5>Telebot X Etoro</h1>
+                  <p style="word-wrap:break-word;">Python Flask with Redis</p>
                   <div class="等待動畫" style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
                 padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
                 border-radius: 8px; will-change: transform;">
-                    <iframe loading="lazy"
+                    <iframe id="telebotXetoro" loading="lazy"
                       style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
                       src="https://etorotelebot-production.up.railway.app/" allowfullscreen="allowfullscreen"
                       allow="fullscreen">
                     </iframe>
                   </div>
-                  <a href="https://etorotelebot-production.up.railway.app/" class="btn btn-primary">Telebot</a>
-                </div>
-                <div class="col-6 shadow-lg p-3 mt-3 bg-body rounded text-center">
-                  <h5>ERP SYSTEM</h1>
-                  <p style="word-wrap:break-word;">Telebot X Etoro</p>
+                  <a href="https://etorotelebot-production.up.railway.app/" class="btn btn-primary">Go to bot</a>
+              </div>
+              <div class="col-6 shadow-lg p-3 mt-3 bg-body rounded text-center">
+                <h5>mini-ERP</h1>
+                  <p style="word-wrap:break-word;">Python FastAPI with React</p>
                   <div class="等待動畫" style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
                 padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
                 border-radius: 8px; will-change: transform;">
-                    <iframe loading="lazy"
+                    <iframe loading="lazy" 
                       style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-                      src="https://etorotelebot-production.up.railway.app/" allowfullscreen="allowfullscreen" allow="fullscreen">
+                      src="https://etorotelebot-production.up.railway.app/" allowfullscreen="allowfullscreen"
+                      allow="fullscreen">
                     </iframe>
                   </div>
                   <a href="https://etorotelebot-production.up.railway.app/" class="btn btn-primary">Go to mini-ERP</a>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="modal fade 中文版" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="等待動畫" style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
+  <div class="modal fade 中文版" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="等待動畫" style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
       padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
       border-radius: 8px; will-change: transform;">
-            <iframe loading="lazy"
-              style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-              src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAE6ydSWrS0&#x2F;view?embed"
-              allowfullscreen="allowfullscreen" allow="fullscreen">
-            </iframe>
-          </div>
+          <iframe loading="lazy"
+            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAE6ydSWrS0&#x2F;view?embed"
+            allowfullscreen="allowfullscreen" allow="fullscreen">
+          </iframe>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="modal fade 英文版" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="等待動畫" style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
+  <div class="modal fade 英文版" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="等待動畫" style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
  padding-bottom: 48px; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
  border-radius: 8px; will-change: transform;">
-            <iframe loading="lazy"
-              style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-              src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFLngjUbyo&#x2F;view?embed"
-              allowfullscreen="allowfullscreen" allow="fullscreen">
-            </iframe>
-          </div>
+          <iframe loading="lazy"
+            style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFLngjUbyo&#x2F;view?embed"
+            allowfullscreen="allowfullscreen" allow="fullscreen">
+          </iframe>
         </div>
       </div>
     </div>
+  </div>
 
 </body>
 <script>
