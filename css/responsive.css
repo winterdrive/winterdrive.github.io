@@ -1,0 +1,455 @@
+/* 
+ * Responsive - 響應式設計
+ * 包含媒體查詢、移動優化、斷點系統
+ */
+
+/* ========== 斷點變量 ========== */
+:root {
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1536px;
+}
+
+/* ========== 基礎響應式設定 ========== */
+
+/* 超小螢幕 - 手機 (0px ~ 479px) */
+@media (max-width: 479px) {
+  :root {
+    --font-5xl: 2.5rem;
+    --font-4xl: 2rem;
+    --font-3xl: 1.5rem;
+    --spacing-xxl: 3rem;
+    --spacing-xl: 2rem;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+    margin: 0 auto;
+    /* 新增：確保 container 置中 */
+  }
+
+  /* 響應式容器 */
+  .container-custom {
+    padding: 0 var(--spacing-sm);
+    margin: 0 auto;
+  }
+
+  /* 導航欄 */
+  .nav-container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(12, 12, 12, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    gap: var(--spacing-md);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    /* 修正: 顯示選單 */
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+  }
+
+  .nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    transition: all var(--transition-normal);
+  }
+
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* 按鈕組 */
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  /* Bootstrap 網格系統在小螢幕上的置中對齊 */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Flexbox 置中 */
+    margin: 0 auto;
+  }
+
+  /* 取消 col-* 的 flex，避免影響 Bootstrap 排版 */
+  [class*="col-"] {
+    /* 不覆蓋 Bootstrap 預設，僅保留 align-items: stretch; */
+    align-items: stretch;
+  }
+
+  /* tech-button 容器置中 */
+  .tech-button {
+    width: 100%;
+    max-width: 350px;
+    /* 限制最大寬度避免過寬 */
+    text-align: center;
+    /* 內容文字置中 */
+  }
+
+  /* 聯絡卡片 */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  /* 表單 */
+  .contact-form {
+    padding: var(--spacing-md);
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .form-control {
+    padding: var(--spacing-sm);
+    font-size: var(--font-sm);
+  }
+
+  /* 專案網格 - 小螢幕優化 */
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--spacing-md);
+    margin: 0 auto;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* 區塊標題居中 */
+  .section-title {
+    text-align: center;
+  }
+
+  .section-subtitle {
+    text-align: center;
+  }
+}
+
+/* 小螢幕 - 大型手機 (480px ~ 639px) */
+@media (min-width: 480px) and (max-width: 639px) {
+  .nav-menu {
+    gap: var(--spacing-lg);
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 中等螢幕 - 平板 (640px ~ 767px) */
+@media (min-width: 640px) and (max-width: 767px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    flex-direction: row;
+    background: none;
+    padding: 0;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 大螢幕 - 平板橫向/小筆電 (768px ~ 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav-menu {
+    gap: var(--spacing-md);
+  }
+}
+
+/* 超大螢幕 - 桌上型電腦 (1024px ~ 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 特大螢幕 - 大型桌上型電腦 (1280px+) */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ========== 方向響應 ========== */
+
+/* 橫向模式 */
+@media (orientation: landscape) and (max-height: 500px) {
+  .nav-menu {
+    gap: var(--spacing-sm);
+  }
+}
+
+/* ========== 觸控設備優化 ========== */
+
+/* 觸控螢幕 */
+@media (hover: none) and (pointer: coarse) {
+
+  /* 增大觸控目標 */
+  .nav-link,
+  .tech-button,
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* 移除hover效果 */
+  .tech-button:hover,
+  .nav-link:hover {
+    transform: none;
+  }
+
+  /* 增強焦點樣式 */
+  .tech-button:focus,
+  .nav-link:focus,
+  .btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+
+  /* 自定義游標已移除 - 使用預設游標 */
+
+  body {
+    cursor: auto;
+  }
+}
+
+/* ========== 高對比度支援 ========== */
+@media (prefers-contrast: high) {
+  :root {
+    --text-secondary: #ffffff;
+    --text-muted: #ffffff;
+  }
+
+  .tech-button {
+    border: 2px solid var(--primary-color);
+  }
+
+  .nav-link {
+    border-bottom: 1px solid transparent;
+  }
+
+  .nav-link:hover {
+    border-bottom-color: var(--primary-color);
+  }
+}
+
+/* ========== 深色/淺色模式 ========== */
+@media (prefers-color-scheme: light) {
+  /* 如果需要淺色模式，在此可定義變量覆蓋 */
+  /* 暫時保持深色主題，無需變量覆蓋 */
+}
+
+/* ========== 視口高度單位修正 ========== */
+
+/* 暫時註解未使用的類別
+.vh-100 {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+*/
+
+/* ========== 性能優化 ========== */
+
+/* 防止水平滾動 */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .container,
+  .tech-grid,
+  .contact-grid {
+    max-width: 100%;
+  }
+}
+
+/* 響應式媒體類別 - 暫時註解未使用的類別
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-responsive iframe,
+.video-responsive video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+*/
+
+/* 可訪問性工具類 - 需要時可使用 */
+
+/* 跳過連結 - 可在導航中添加 */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary-color);
+  color: var(--bg-dark);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* 螢幕閱讀器專用類別 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 焦點樣式 */
+@media (hover: hover) and (pointer: fine) {
+  *:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+}
+
+/* ========== 列印樣式 ========== */
+@media print {
+
+  .modern-navbar,
+  .back-to-top,
+  .loading-overlay {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .contact-section {
+    background: white !important;
+    color: black !important;
+  }
+
+  .tech-button {
+    border: 1px solid black !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+}
+
+/* 游標樣式已移除 - 使用預設游標 */

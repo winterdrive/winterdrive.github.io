@@ -1,0 +1,157 @@
+/* 
+ * Winston Tang Portfolio - Main Styles
+ * 主要樣式文件 - 匯入所有子模組
+ */
+
+/* 載入各模組樣式 - 必須在最頂部 */
+@import url('./base.css');
+@import url('./components.css');
+@import url('./animations.css');
+@import url('./responsive.css');
+
+/* CSS Variables - 全域變量 */
+:root {
+  /* 主要色彩 */
+  --primary-color: #64ffda;
+  --secondary-color: #536dfe;
+  --accent-color: #ff4081;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-muted: rgba(255, 255, 255, 0.6);
+
+  /* 背景色彩 */
+  --bg-dark: #0c0c0c;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #16213e;
+  --bg-quaternary: #0f3460;
+  --bg-accent: #533483;
+
+  /* 間距系統 */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 5rem;
+
+  /* 字體大小 */
+  --font-xs: 0.8rem;
+  --font-sm: 0.9rem;
+  --font-base: 1rem;
+  --font-lg: 1.1rem;
+  --font-xl: 1.2rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 2rem;
+  --font-4xl: 3rem;
+  --font-5xl: 4rem;
+
+  /* 邊框半徑 */
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-xl: 25px;
+  --radius-round: 50%;
+
+  /* 陰影 */
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 40px rgba(100, 255, 218, 0.3);
+
+  /* 過渡動畫 */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-cubic: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Z-index 階層 */
+  --z-bg: -2;
+  --z-bg-grid: -1;
+  --z-content: 1;
+  --z-badge: 10;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-navbar: 1100;
+  --z-backtotop: 1110;
+  --z-modal: 1200;
+  --z-overlay: 1210;
+  --z-popover: 1300;
+  --z-tooltip: 1400;  --z-toast: 1500;
+}
+
+/* Reset 和基礎樣式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg,
+      var(--bg-dark) 0%,
+      var(--bg-secondary) 25%,
+      var(--bg-tertiary) 50%,
+      var(--bg-quaternary) 75%,
+      var(--bg-accent) 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;  color: var(--text-primary);
+  /* 使用預設游標 */
+}
+
+/* 全域工具類 */
+/* 保留 .text-muted，因為在HTML中有使用 */
+.text-muted {
+  color: var(--text-muted);
+}
+
+
+/* 響應式設計 */
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* 專案類別標籤樣式（同步新命名） */
+.project-category-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 4px 14px;
+  border-radius: 16px;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #fff;
+  z-index: var(--z-badge);
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.5px;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.category-independent-project {
+  background: #007bff;
+}
+
+.category-coursework-project {
+  background: #28a745;
+}
+
+.category-competition-project {
+  background: #ffc107;
+  color: #222;
+}
+
+.category-job-experience {
+  background: #6c757d;
+}
+
+/* 讓 project-image 支援絕對定位標籤 */
+.project-image {
+  position: relative;
+}

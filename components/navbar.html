@@ -1,0 +1,27 @@
+<!-- 導航欄組件 -->
+<nav class="modern-navbar">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="#home" class="nav-logo">
+      <i class="fas fa-code"></i>
+      Winston Tang
+    </a> <!-- 導航選單 - 動態生成 -->
+    <div class="nav-menu" id="navMenu">
+      <!-- 導航連結將由 ComponentBuilder 動態生成 -->
+    </div>
+
+    <!-- 主題切換按鈕 - 亮色系切換 -->
+    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="切換亮色主題">
+      <i class="fas fa-sun"></i>
+    </button>
+    <!-- 原本預留的主題切換按鈕區塊可保留給動態生成用 -->
+    <div id="navThemeToggle" style="display:none;"></div>
+
+    <!-- 移動端選單切換按鈕 -->
+    <button class="nav-toggle" id="navToggle" aria-label="開啟選單">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>

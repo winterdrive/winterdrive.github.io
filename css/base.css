@@ -1,0 +1,515 @@
+/* 
+ * Base Styles - 基礎元素樣式
+ * 包含背景、游標、滾動條等基礎效果
+ */
+
+/* 動態背景效果 */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(100, 255, 218, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(83, 109, 254, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(255, 64, 129, 0.15) 0%, transparent 50%);
+  animation: backgroundShift 20s ease-in-out infinite;
+  z-index: var(--z-bg);
+}
+
+/* 動態網格背景 */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(100, 255, 218, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 255, 218, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 30s linear infinite;
+  z-index: var(--z-bg-grid);
+}
+
+/* 自定義游標樣式已移除 - 使用預設游標 */
+
+/* 自定義滾動條 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(26, 26, 46, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+}
+
+/* 基礎連結樣式 */
+a {
+  text-decoration: none !important;
+  transition: all var(--transition-normal);
+}
+
+a.disabled {
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+/* 標題樣式已移除 */
+
+/* 主內容區域 */
+.main-contain {
+  padding-top: 100px;
+  position: relative;
+  z-index: var(--z-content);
+}
+
+/* 亮色主題 - 黑白灰簡約風格 */
+body.light-theme {
+  background: #fff !important;
+  color: #111 !important;
+}
+
+/* 移除動態背景效果 */
+body.light-theme::before,
+body.light-theme::after {
+  display: none !important;
+}
+
+/* 基礎容器和文字 */
+body.light-theme .main-contain,
+body.light-theme main,
+body.light-theme section,
+body.light-theme div,
+body.light-theme p,
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6,
+body.light-theme span,
+body.light-theme strong,
+body.light-theme em {
+  background: transparent !important;
+  color: #111 !important;
+}
+
+/* 連結樣式 */
+body.light-theme a,
+body.light-theme .nav-link,
+body.light-theme .nav-logo {
+  color: #222 !important;
+  text-decoration: none;
+}
+
+body.light-theme a:hover,
+body.light-theme .nav-link:hover {
+  color: #111 !important;
+  background: #f5f5f5 !important;
+}
+
+/* 導航欄 */
+body.light-theme .modern-navbar {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid #ddd !important;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .nav-logo {
+  color: #222 !important;
+}
+
+body.light-theme .nav-link::before {
+  background: linear-gradient(90deg, transparent, rgba(34, 34, 34, 0.1), transparent) !important;
+}
+
+body.light-theme .nav-link:hover {
+  background: rgba(34, 34, 34, 0.05) !important;
+  color: #111 !important;
+}
+
+/* 按鈕和交互元素 */
+body.light-theme .tech-button,
+body.light-theme .btn,
+body.light-theme button {
+  background: #fff !important;
+  color: #222 !important;
+  border: 1px solid #ddd !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-theme .tech-button:hover,
+body.light-theme .btn:hover,
+body.light-theme button:hover {
+  background: #f8f9fa !important;
+  color: #111 !important;
+  border-color: #222 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* tech-button 內容樣式 */
+body.light-theme .tech-button-content {
+  color: #222 !important;
+}
+
+body.light-theme .tech-button-content i {
+  color: #666 !important;
+}
+
+body.light-theme .tech-button:hover .tech-button-content i {
+  color: #222 !important;
+}
+
+body.light-theme .tech-button-content .text-muted {
+  color: #666 !important;
+}
+
+body.light-theme .tech-button:hover .tech-button-content .text-muted {
+  color: #444 !important;
+}
+
+/* 移除漸變背景和特效 */
+body.light-theme .tech-button::before,
+body.light-theme .tech-button::after {
+  display: none !important;
+}
+
+/* 卡片元素 */
+body.light-theme .project-card,
+body.light-theme .card,
+body.light-theme .modal-content {
+  background: #fff !important;
+  color: #111 !important;
+  border: 1px solid #ddd !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-theme .project-card:hover,
+body.light-theme .card:hover {
+  background: #fafafa !important;
+  border-color: #222 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 專案卡片內容 */
+body.light-theme .project-content h3 {
+  color: #222 !important;
+}
+
+body.light-theme .project-content p {
+  color: #555 !important;
+}
+
+/* 專案卡片懸停覆蓋層 */
+body.light-theme .project-overlay {
+  background: linear-gradient(135deg, rgba(34, 34, 34, 0.05), rgba(68, 68, 68, 0.05)) !important;
+}
+
+/* 移除專案卡片的漸變背景 */
+body.light-theme .project-image {
+  background: #f8f9fa !important;
+}
+
+/* 確保專案圖片背景適配 */
+body.light-theme .project-image img {
+  background: #fff !important;
+}
+
+/* 專案類別標籤保持對比度 */
+body.light-theme .project-category-badge {
+  background: #222 !important;
+  color: #fff !important;
+}
+
+/* 頁腳 */
+body.light-theme .footer,
+body.light-theme .footer__container,
+body.light-theme .footer__info,
+body.light-theme .footer__bottom {
+  background: #fff !important;
+  color: #222 !important;
+  border-color: #ddd !important;
+}
+
+body.light-theme .footer__contact-item {
+  color: #555 !important;
+}
+
+body.light-theme .footer__contact-item:hover {
+  color: #222 !important;
+}
+
+body.light-theme .footer__copyright,
+body.light-theme .footer__made-with {
+  color: #666 !important;
+}
+
+body.light-theme .footer__heart {
+  color: #e74c3c !important; /* 保持紅色愛心 */
+}
+
+/* 主題切換按鈕 */
+body.light-theme #theme-toggle-btn,
+body.light-theme .theme-toggle-btn {
+  background: #fff !important;
+  color: #888 !important;
+  border: 1px solid #ddd !important;
+}
+
+body.light-theme #theme-toggle-btn:hover,
+body.light-theme .theme-toggle-btn:hover {
+  background: #f5f5f5 !important;
+  color: #222 !important;
+  border-color: #222 !important;
+}
+
+/* 圖標統一設為灰色 */
+body.light-theme i,
+body.light-theme .fa,
+body.light-theme .fas,
+body.light-theme .far,
+body.light-theme .fab {
+  color: #888 !important;
+}
+
+/* 主題按鈕圖標 */
+body.light-theme #theme-toggle-btn i,
+body.light-theme .theme-toggle-btn i {
+  color: #888 !important;
+}
+
+body.light-theme #theme-toggle-btn:hover i,
+body.light-theme .theme-toggle-btn:hover i {
+  color: #222 !important;
+}
+
+/* 表單元素 */
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme select {
+  background: #fff !important;
+  color: #111 !important;
+  border: 1px solid #ddd !important;
+}
+
+body.light-theme input:focus,
+body.light-theme textarea:focus,
+body.light-theme select:focus {
+  background: #fafafa !important;
+  color: #111 !important;
+  border-color: #222 !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 34, 34, 0.1) !important;
+}
+
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder {
+  color: #999 !important;
+}
+
+/* 表單標籤 */
+body.light-theme .form-group label {
+  color: #222 !important;
+}
+
+/* 聯絡區域 */
+body.light-theme .contact-section {
+  background: #f8f9fa !important;
+}
+
+body.light-theme .contact-section::before {
+  display: none !important;
+}
+
+body.light-theme .contact-form-wrapper {
+  background: #fff !important;
+  border: 1px solid #ddd !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 文字選取 */
+body.light-theme ::selection {
+  background: #e6e6e6 !important;
+  color: #111 !important;
+}
+
+/* 滾動條 */
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: #bbb !important;
+  border: 2px solid #fff;
+}
+
+body.light-theme ::-webkit-scrollbar-track {
+  background: #f5f5f5 !important;
+}
+
+/* 亮色主題游標樣式已移除 - 使用預設游標 */
+
+/* 覆蓋任何殘留的彩色主題元素 */
+body.light-theme * {
+  border-color: inherit;
+}
+
+/* 確保沒有漸變背景殘留 */
+body.light-theme .modern-navbar,
+body.light-theme .footer,
+body.light-theme .project-card,
+body.light-theme .card {
+  background-image: none !important;
+}
+
+/* 回到頂部按鈕 */
+body.light-theme .back-to-top {
+  background: #222 !important;
+  color: #fff !important;
+  border: 1px solid #222 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-theme .back-to-top:hover {
+  background: #111 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 確保專案區域的背景透明 */
+body.light-theme .projects-section {
+  background: transparent !important;
+}
+
+body.light-theme .projects-section::before {
+  display: none !important;
+}
+
+/* 移動端導航選單 */
+body.light-theme .nav-menu {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid #ddd !important;
+}
+
+/* 響應式導航切換按鈕 */
+body.light-theme .nav-toggle span {
+  background: #222 !important;
+}
+
+/* 確保 Bootstrap 組件也適配 */
+body.light-theme .container,
+body.light-theme .row,
+body.light-theme .col,
+body.light-theme [class*="col-"] {
+  color: inherit !important;
+}
+
+/* 確保任何模態框或彈出層也適配 */
+body.light-theme .modal,
+body.light-theme .dropdown-menu,
+body.light-theme .popover,
+body.light-theme .tooltip {
+  background: #fff !important;
+  color: #111 !important;
+  border: 1px solid #ddd !important;
+}
+
+/* 確保載入動畫也適配 */
+body.light-theme .loading-overlay {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #222 !important;
+}
+
+/* 確保所有按鈕類型的一致性 */
+body.light-theme button,
+body.light-theme input[type="button"],
+body.light-theme input[type="submit"],
+body.light-theme input[type="reset"] {
+  background: #fff !important;
+  color: #222 !important;
+  border: 1px solid #ddd !important;
+}
+
+body.light-theme button:hover,
+body.light-theme input[type="button"]:hover,
+body.light-theme input[type="submit"]:hover,
+body.light-theme input[type="reset"]:hover {
+  background: #f5f5f5 !important;
+  color: #111 !important;
+  border-color: #222 !important;
+}
+
+/* 確保連結在懸停時的對比度 */
+body.light-theme a:not(.btn):not(.nav-link):not(.nav-logo) {
+  color: #0066cc !important;
+}
+
+body.light-theme a:not(.btn):not(.nav-link):not(.nav-logo):hover {
+  color: #004499 !important;
+  text-decoration: underline !important;
+}
+
+/* 確保任何殘留的主色調都被覆蓋 */
+body.light-theme .primary-color,
+body.light-theme .text-primary-color {
+  color: #222 !important;
+}
+
+body.light-theme .bg-primary,
+body.light-theme .bg-primary-color {
+  background: #fff !important;
+  color: #222 !important;
+}
+
+/* 修正任何可能的 z-index 問題 */
+body.light-theme .modern-navbar {
+  z-index: var(--z-navbar) !important;
+}
+
+/* 移除文字陰影和發光效果 */
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme h5,
+body.light-theme h6,
+body.light-theme .nav-logo {
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* 標題和文字樣式 */
+body.light-theme .section-title {
+  color: #222 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+}
+
+body.light-theme .section-subtitle {
+  color: #666 !important;
+}
+
+/* 確保所有文字可見 */
+body.light-theme .text-muted {
+  color: #666 !important;
+}
+
+body.light-theme .text-primary {
+  color: #111 !important;
+}
+
+body.light-theme .text-secondary {
+  color: #555 !important;
+}

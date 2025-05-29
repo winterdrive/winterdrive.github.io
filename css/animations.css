@@ -1,0 +1,232 @@
+/* 
+ * Animations - 動畫效果
+ * 包含關鍵幀動畫、過渡效果、載入動畫等
+ */
+
+/* ========== 關鍵幀動畫 ========== */
+
+/* 背景移動效果 */
+@keyframes backgroundShift {
+
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+
+  33% {
+    transform: scale(1.1) rotate(120deg);
+    opacity: 0.6;
+  }
+
+  66% {
+    transform: scale(0.9) rotate(240deg);
+    opacity: 1;
+  }
+}
+
+/* 網格移動效果 */
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(60px, 60px);
+  }
+}
+
+/* 背景粒子效果 */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+/* 漸變背景動畫 */
+@keyframes gradientMove {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* 打字機效果 */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    border-right-color: var(--primary-color);
+  }
+
+  51%,
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+/* 淡入效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 旋轉載入 */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 發光效果 */
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.8);
+  }
+}
+
+/* 波紋效果 */
+@keyframes ripple {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ========== 動畫類別 ========== */
+
+/* 基礎動畫 - 暫時註解未使用的類別
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+*/
+
+/* ========== 載入動畫 ========== */
+
+/* 載入遮罩 */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-dark);
+  display: none;
+  /* 預設隱藏，由 JavaScript 控制顯示 */
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-overlay);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-slow), visibility var(--transition-slow);
+}
+
+.loading-overlay.show {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+.loading-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* 載入旋轉器 */
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(100, 255, 218, 0.3);
+  border-top: 4px solid var(--primary-color);
+  border-radius: var(--radius-round);
+  animation: spin 1s linear infinite;
+}
+
+/* ========== 滾動動畫 ========== */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== 性能優化 ========== */
+
+/* 減少重繪 - 可在需要時應用到特定元素 */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* 關閉動畫（可訪問性） */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .loading-spinner {
+    animation: none;
+    border: 4px solid var(--primary-color);
+  }
+}

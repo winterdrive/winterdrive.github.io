@@ -1,0 +1,44 @@
+# Markdown files
+TODO.md
+resume.md
+project.md
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# 其他常見忽略項目
+.env
+.env.local
+.env.*.local
+
+# 產生的靜態資源
+*.cache
+.cache/
+out/
+coverage/
+
+# 忽略 Windows 系統檔案
+$RECYCLE.BIN/
+System Volume Information/
