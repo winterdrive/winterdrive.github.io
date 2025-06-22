@@ -1,0 +1,89 @@
+# Project Overview for LLMs
+
+This file provides a summary of the Winston Tang personal portfolio website project (winterdrive.github.io) to assist Large Language Models in understanding its structure and purpose.
+
+## Project Goal
+The primary goal of this project is to serve as a personal portfolio website for Winston Tang. It aims to showcase his full-stack development skills, project experience, and technical expertise to potential employers or collaborators. The website is designed to be modern, responsive, and performant.
+
+## Key Features
+- **Modern Design:** Utilizes a responsive, dark-themed user interface.
+- **Performance Optimized:** Implements techniques such as lazy loading for images, resource preloading for critical assets, and modular loading of JavaScript and CSS to ensure fast load times.
+- **Modular Architecture:** The project is built with a clear separation of concerns:
+    - HTML components are distinct and loaded dynamically.
+    - CSS styles are modularized.
+    - JavaScript functionalities are broken down into specific modules.
+- **Fully Responsive:** Adapts seamlessly to various screen sizes, including desktops, tablets, and mobile devices.
+- **Accessibility Focused:** Designed with accessibility in mind, supporting keyboard navigation and screen reader compatibility.
+- **Interactive Experience:** Features smooth scrolling, scroll-triggered animations, loading effects.
+- **Project Showcase:** Dynamically loads and displays project information.
+
+## Technology Stack
+- **Frontend Core:** Vanilla JavaScript (ES6+)
+- **Styling:** CSS3 (Leveraging Grid, Flexbox, Custom Properties)
+- **Responsive Framework:** Mobile-First design principles, supplemented by Bootstrap 4 for some layout elements.
+- **Icons:** Font Awesome 6
+- **External Libraries:** Bootstrap 4 (CSS)
+
+## Project Structure Overview
+
+```
+winterdrive.github.io/
+├── index.html           # Main entry point of the website. Contains the basic HTML structure and orchestrates the loading of components and scripts.
+├── README.md            # Detailed project documentation (intended for humans).
+├── llms.txt             # This file: provides a summary for LLMs.
+├── components/          # Directory for reusable HTML partials/components.
+│   ├── navbar.html      # Navigation bar component.
+│   ├── projects.html    # Component for displaying project showcases.
+│   └── footer.html      # Footer component.
+├── css/                 # Directory for CSS style modules.
+│   ├── main.css         # Main stylesheet, imports other CSS modules.
+│   ├── base.css         # Basic styles, variables, and resets.
+│   ├── components.css   # Styles specific to the HTML components.
+│   ├── animations.css   # CSS for animations.
+│   └── responsive.css   # Styles for responsive design across different screen sizes.
+└── js/                  # Directory for JavaScript modules.
+    ├── main.js          # Main application controller; initializes the site and coordinates other modules.
+    ├── navigation.js    # Handles navigation logic, smooth scrolling, and active link highlighting.
+    ├── animations.js    # Manages scroll-triggered animations and other visual effects using Intersection Observer.
+    └── utils.js         # Contains utility functions, performance optimization helpers (e.g., debounce, throttle), and common helper scripts.
+```
+
+## Core Functionalities
+
+### 1. Dynamic Component Loading
+The `index.html` file uses JavaScript to dynamically fetch and inject HTML content from the `components/` directory (e.g., navbar, projects, footer) into designated containers. This is primarily managed by a `loadComponent` function within a script tag in `index.html`, which then calls the `App` class likely defined in `js/main.js`.
+
+### 2. Navigation
+- Implemented in `js/navigation.js`.
+- Features smooth scrolling to different sections of the page.
+- Highlights the active navigation link based on the current scroll position.
+- Includes a "back to top" button.
+
+### 3. Animations
+- Handled by `js/animations.js` and `css/animations.css`.
+- Elements animate into view as the user scrolls, using the Intersection Observer API for efficiency.
+- Loading animations provide visual feedback during page and component load.
+
+### 4. Project Display
+- The `components/projects.html` component is responsible for the layout of project items.
+- Project data might be hardcoded in `projects.html` or dynamically fetched/rendered by JavaScript (details in `projects.html` and potentially `js/main.js`).
+
+### 5. Performance Optimizations
+- **Lazy Loading:** Images are likely loaded on demand as they enter the viewport.
+- **Resource Preloading:** Critical CSS and JS files are preloaded using `<link rel="preload">` in `index.html`.
+- **Modular JavaScript/CSS:** Only necessary code is loaded, improving initial page load speed.
+- **Event Handling Optimization:** Techniques like debouncing and throttling are mentioned in the README and likely implemented in `js/utils.js` for event listeners (e.g., scroll, resize).
+
+## How the Page Works (index.html flow)
+1.  **Initial Load:** `index.html` is served. Basic meta tags, preloads, and critical CSS are loaded.
+2.  **Loading Overlay:** A loading animation is displayed.
+3.  **Component Loading (`DOMContentLoaded`):**
+    *   The script in `index.html` calls `loadComponent` to fetch `navbar.html`, `projects.html`, and `footer.html` and inject them into their respective `div` containers (`#navbar-container`, `#projects-container`, `#footer-container`).
+    *   A temporary loading indicator is shown for the projects section while `projects.html` is being fetched.
+4.  **JavaScript Initialization:**
+    *   Utility scripts (`utils.js`), animation scripts (`animations.js`), and navigation scripts (`navigation.js`) are loaded.
+    *   `main.js` is loaded, which likely defines an `App` class.
+    *   An instance of the `App` class is created (`window.app = new window.App();`). This class is expected to initialize event listeners, animations, navigation handlers, and other dynamic functionalities of the page.
+5.  **User Interaction:** The initialized JavaScript modules handle user interactions like scrolling, clicking navigation links, etc.
+
+This summary should provide a good understanding of the project's architecture and key components for an LLM.
