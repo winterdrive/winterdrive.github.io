@@ -72,11 +72,9 @@ winterdrive.github.io/
 4. 初始化 `App` 類別，啟用導覽與動畫
 5. 使用者互動由 JS 模組管理
 
-## 📄 其他參考資料 (Optional)
+## 📄 其他參考資料
 
 - [README.md](https://winterdrive.github.io/README.md): 詳細專案背景與原始說明文件
-- [project.md](https://winterdrive.github.io/project.md): 開發用專案清單
-- [resume.md](https://winterdrive.github.io/resume.md): Winston Tang 的履歷與技能背景
 
 ---
 
