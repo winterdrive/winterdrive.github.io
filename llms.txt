@@ -1,89 +1,85 @@
-# Project Overview for LLMs
+# Winston Tang – 個人作品集網站
 
-This file provides a summary of the Winston Tang personal portfolio website project (winterdrive.github.io) to assist Large Language Models in understanding its structure and purpose.
+> 本網站展示 Winston Tang 的全端開發技能與模組化架構，設計現代、響應式，並強調互動性與性能優化。此文件旨在協助大型語言模型理解網站目的與架構。
 
-## Project Goal
-The primary goal of this project is to serve as a personal portfolio website for Winston Tang. It aims to showcase his full-stack development skills, project experience, and technical expertise to potential employers or collaborators. The website is designed to be modern, responsive, and performant.
+## 📂 專案目標與定位
 
-## Key Features
-- **Modern Design:** Utilizes a responsive, dark-themed user interface.
-- **Performance Optimized:** Implements techniques such as lazy loading for images, resource preloading for critical assets, and modular loading of JavaScript and CSS to ensure fast load times.
-- **Modular Architecture:** The project is built with a clear separation of concerns:
-    - HTML components are distinct and loaded dynamically.
-    - CSS styles are modularized.
-    - JavaScript functionalities are broken down into specific modules.
-- **Fully Responsive:** Adapts seamlessly to various screen sizes, including desktops, tablets, and mobile devices.
-- **Accessibility Focused:** Designed with accessibility in mind, supporting keyboard navigation and screen reader compatibility.
-- **Interactive Experience:** Features smooth scrolling, scroll-triggered animations, loading effects.
-- **Project Showcase:** Dynamically loads and displays project information.
+本網站為 Winston Tang 的個人作品集，主要展示其全端開發能力、技術實作經驗，並提供互動式網頁設計範例。目標對象為潛在雇主、技術合作夥伴或技術愛好者。
 
-## Technology Stack
-- **Frontend Core:** Vanilla JavaScript (ES6+)
-- **Styling:** CSS3 (Leveraging Grid, Flexbox, Custom Properties)
-- **Responsive Framework:** Mobile-First design principles, supplemented by Bootstrap 4 for some layout elements.
-- **Icons:** Font Awesome 6
-- **External Libraries:** Bootstrap 4 (CSS)
+- 🌐 網站連結: [https://winterdrive.github.io](https://winterdrive.github.io)
 
-## Project Structure Overview
+## 🔧 技術架構與工具
 
-```
+- **前端核心**: Vanilla JavaScript (ES6+)
+- **樣式設計**: CSS3（Grid, Flexbox, Custom Properties）
+- **框架與外掛**:
+  - Bootstrap 4（排版與元件）
+  - Font Awesome 6（圖示）
+- **設計原則**:
+  - Mobile-First 響應式設計
+  - 模組化載入與延遲加載策略
+  - 預載入關鍵資源提升效能
+  - 無障礙支援（可鍵盤導覽與螢幕閱讀器相容）
+
+## 🧩 核心功能模組
+
+### 🧱 元件注入與頁面初始化
+- `index.html` 會使用 JS 載入 `components/` 中的 HTML 段落，如 `navbar.html`、`projects.html`、`footer.html`
+- 初始化透過 `main.js` 中的 `App` 類別完成事件註冊與動畫觸發
+
+### 🔗 導覽與互動
+- `navigation.js` 實現滾動錨點、導航高亮與「回到頂部」
+- `animations.js` 配合 `Intersection Observer` 控制滾動觸發動畫
+- 使用 `utils.js` 實作 debounce 與 throttle 等效能優化
+
+### 🖼️ 專案展示模組
+- `projects.html` 為主要展示區塊，顯示互動卡片與分類資訊
+- 專案資料可透過 JS 動態注入或靜態撰寫
+
+### ⚙️ 效能優化策略
+- 懶加載圖片
+- 預載入重要資源（`<link rel="preload">`）
+- 模組化 CSS / JS 載入
+- 精簡事件綁定與節流防抖處理
+
+## 🗂️ 專案目錄結構
+
 winterdrive.github.io/
-├── index.html           # Main entry point of the website. Contains the basic HTML structure and orchestrates the loading of components and scripts.
-├── README.md            # Detailed project documentation (intended for humans).
-├── llms.txt             # This file: provides a summary for LLMs.
-├── components/          # Directory for reusable HTML partials/components.
-│   ├── navbar.html      # Navigation bar component.
-│   ├── projects.html    # Component for displaying project showcases.
-│   └── footer.html      # Footer component.
-├── css/                 # Directory for CSS style modules.
-│   ├── main.css         # Main stylesheet, imports other CSS modules.
-│   ├── base.css         # Basic styles, variables, and resets.
-│   ├── components.css   # Styles specific to the HTML components.
-│   ├── animations.css   # CSS for animations.
-│   └── responsive.css   # Styles for responsive design across different screen sizes.
-└── js/                  # Directory for JavaScript modules.
-    ├── main.js          # Main application controller; initializes the site and coordinates other modules.
-    ├── navigation.js    # Handles navigation logic, smooth scrolling, and active link highlighting.
-    ├── animations.js    # Manages scroll-triggered animations and other visual effects using Intersection Observer.
-    └── utils.js         # Contains utility functions, performance optimization helpers (e.g., debounce, throttle), and common helper scripts.
-```
+├── index.html            # 主入口頁面
+├── README.md             # 人類閱讀用的專案說明
+├── llms.txt              # 本文件，提供 LLM 導覽用途
+├── components/
+│   ├── navbar.html
+│   ├── projects.html
+│   └── footer.html
+├── css/
+│   ├── main.css
+│   ├── base.css
+│   ├── components.css
+│   ├── animations.css
+│   └── responsive.css
+└── js/
+    ├── main.js
+    ├── navigation.js
+    ├── animations.js
+    └── utils.js
 
-## Core Functionalities
+## 🧭 頁面載入流程概述
 
-### 1. Dynamic Component Loading
-The `index.html` file uses JavaScript to dynamically fetch and inject HTML content from the `components/` directory (e.g., navbar, projects, footer) into designated containers. This is primarily managed by a `loadComponent` function within a script tag in `index.html`, which then calls the `App` class likely defined in `js/main.js`.
+1. 使用者進入 `index.html`
+2. 顯示 loading 畫面
+3. `DOMContentLoaded` 後觸發 component 載入
+4. 初始化 `App` 類別，啟用導覽與動畫
+5. 使用者互動由 JS 模組管理
 
-### 2. Navigation
-- Implemented in `js/navigation.js`.
-- Features smooth scrolling to different sections of the page.
-- Highlights the active navigation link based on the current scroll position.
-- Includes a "back to top" button.
+## 📄 其他參考資料 (Optional)
 
-### 3. Animations
-- Handled by `js/animations.js` and `css/animations.css`.
-- Elements animate into view as the user scrolls, using the Intersection Observer API for efficiency.
-- Loading animations provide visual feedback during page and component load.
+- [README.md](https://winterdrive.github.io/README.md): 詳細專案背景與原始說明文件
+- [project.md](https://winterdrive.github.io/project.md): 開發用專案清單
+- [resume.md](https://winterdrive.github.io/resume.md): Winston Tang 的履歷與技能背景
 
-### 4. Project Display
-- The `components/projects.html` component is responsible for the layout of project items.
-- Project data might be hardcoded in `projects.html` or dynamically fetched/rendered by JavaScript (details in `projects.html` and potentially `js/main.js`).
+---
 
-### 5. Performance Optimizations
-- **Lazy Loading:** Images are likely loaded on demand as they enter the viewport.
-- **Resource Preloading:** Critical CSS and JS files are preloaded using `<link rel="preload">` in `index.html`.
-- **Modular JavaScript/CSS:** Only necessary code is loaded, improving initial page load speed.
-- **Event Handling Optimization:** Techniques like debouncing and throttling are mentioned in the README and likely implemented in `js/utils.js` for event listeners (e.g., scroll, resize).
+**Last updated:** 2025-06-22
 
-## How the Page Works (index.html flow)
-1.  **Initial Load:** `index.html` is served. Basic meta tags, preloads, and critical CSS are loaded.
-2.  **Loading Overlay:** A loading animation is displayed.
-3.  **Component Loading (`DOMContentLoaded`):**
-    *   The script in `index.html` calls `loadComponent` to fetch `navbar.html`, `projects.html`, and `footer.html` and inject them into their respective `div` containers (`#navbar-container`, `#projects-container`, `#footer-container`).
-    *   A temporary loading indicator is shown for the projects section while `projects.html` is being fetched.
-4.  **JavaScript Initialization:**
-    *   Utility scripts (`utils.js`), animation scripts (`animations.js`), and navigation scripts (`navigation.js`) are loaded.
-    *   `main.js` is loaded, which likely defines an `App` class.
-    *   An instance of the `App` class is created (`window.app = new window.App();`). This class is expected to initialize event listeners, animations, navigation handlers, and other dynamic functionalities of the page.
-5.  **User Interaction:** The initialized JavaScript modules handle user interactions like scrolling, clicking navigation links, etc.
-
-This summary should provide a good understanding of the project's architecture and key components for an LLM.
+---
