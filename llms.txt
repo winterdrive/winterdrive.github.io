@@ -1,0 +1,83 @@
+# Winston Tang – 個人作品集網站
+
+> 本網站展示 Winston Tang 的全端開發技能與模組化架構，設計現代、響應式，並強調互動性與性能優化。此文件旨在協助大型語言模型理解網站目的與架構。
+
+## 📂 專案目標與定位
+
+本網站為 Winston Tang 的個人作品集，主要展示其全端開發能力、技術實作經驗，並提供互動式網頁設計範例。目標對象為潛在雇主、技術合作夥伴或技術愛好者。
+
+- 🌐 網站連結: [https://winterdrive.github.io](https://winterdrive.github.io)
+
+## 🔧 技術架構與工具
+
+- **前端核心**: Vanilla JavaScript (ES6+)
+- **樣式設計**: CSS3（Grid, Flexbox, Custom Properties）
+- **框架與外掛**:
+  - Bootstrap 4（排版與元件）
+  - Font Awesome 6（圖示）
+- **設計原則**:
+  - Mobile-First 響應式設計
+  - 模組化載入與延遲加載策略
+  - 預載入關鍵資源提升效能
+  - 無障礙支援（可鍵盤導覽與螢幕閱讀器相容）
+
+## 🧩 核心功能模組
+
+### 🧱 元件注入與頁面初始化
+- `index.html` 會使用 JS 載入 `components/` 中的 HTML 段落，如 `navbar.html`、`projects.html`、`footer.html`
+- 初始化透過 `main.js` 中的 `App` 類別完成事件註冊與動畫觸發
+
+### 🔗 導覽與互動
+- `navigation.js` 實現滾動錨點、導航高亮與「回到頂部」
+- `animations.js` 配合 `Intersection Observer` 控制滾動觸發動畫
+- 使用 `utils.js` 實作 debounce 與 throttle 等效能優化
+
+### 🖼️ 專案展示模組
+- `projects.html` 為主要展示區塊，顯示互動卡片與分類資訊
+- 專案資料可透過 JS 動態注入或靜態撰寫
+
+### ⚙️ 效能優化策略
+- 懶加載圖片
+- 預載入重要資源（`<link rel="preload">`）
+- 模組化 CSS / JS 載入
+- 精簡事件綁定與節流防抖處理
+
+## 🗂️ 專案目錄結構
+
+winterdrive.github.io/
+├── index.html            # 主入口頁面
+├── README.md             # 人類閱讀用的專案說明
+├── llms.txt              # 本文件，提供 LLM 導覽用途
+├── components/
+│   ├── navbar.html
+│   ├── projects.html
+│   └── footer.html
+├── css/
+│   ├── main.css
+│   ├── base.css
+│   ├── components.css
+│   ├── animations.css
+│   └── responsive.css
+└── js/
+    ├── main.js
+    ├── navigation.js
+    ├── animations.js
+    └── utils.js
+
+## 🧭 頁面載入流程概述
+
+1. 使用者進入 `index.html`
+2. 顯示 loading 畫面
+3. `DOMContentLoaded` 後觸發 component 載入
+4. 初始化 `App` 類別，啟用導覽與動畫
+5. 使用者互動由 JS 模組管理
+
+## 📄 其他參考資料
+
+- [README.md](https://winterdrive.github.io/README.md): 詳細專案背景與原始說明文件
+
+---
+
+**Last updated:** 2025-06-22
+
+---
