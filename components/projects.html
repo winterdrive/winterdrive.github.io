@@ -1,200 +1,301 @@
-<!-- 專案經驗區域組件 -->
+<!-- Projects Section Component -->
 <section id="projects" class="projects-section">
   <div class="container-custom">
     <div class="section-header">
-      <h2 class="section-title">專案經驗</h2>
-      <p class="section-subtitle">精選的開發專案與設計作品</p>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">Selected open-source projects and professional work</p>
     </div>
 
-    <!-- 專案網格 -->
-    <div class="projects-grid">
-      <!-- PowerBarcoder -->
-      <div class="project-card" data-category="independent-project" style="position:relative;">
-        <a href="https://github.com/PowerBarcoder/PowerBarcoder" target="_blank" rel="noopener"
-          style="position:absolute;inset:0;z-index:3;display:block;"></a>
-        <div class="project-image">
-          <span class="project-category-badge category-independent-project">Independent Project</span>
-          <img src="https://raw.githubusercontent.com/PowerBarcoder/PowerBarcoder/refs/heads/main/pipeline.png"
-            alt="PowerBarcoder icon" style="width:100%;height:100%;object-fit:cover;background:#fff;" loading="lazy" />
-          <div class="project-overlay"></div>
-        </div>
-        <div class="project-content">
-          <h3>PowerBarcoder</h3>
-          <p>語言：Python</p>
-          <p>NGS solution package.</p>
-        </div>
+    <!-- Filter Bar -->
+    <div class="project-filter" role="group" aria-label="Filter projects by category">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="independent-project">Open Source</button>
+      <button class="filter-btn" data-filter="job-experience">Work</button>
+      <button class="filter-btn" data-filter="competition-project">Awards</button>
+      <button class="filter-btn" data-filter="publication">Research</button>
+    </div>
+
+    <!-- Projects Group -->
+    <div class="project-section-group" data-group="projects">
+      <div class="section-header" style="margin-top: 2rem;">
+        <h2 class="section-title" style="font-size: 1.5rem;">Open Source &amp; Work</h2>
       </div>
-      <!-- virtual-tabs -->
-      <div class="project-card" data-category="independent-project" style="position:relative;">
-        <a href="https://marketplace.visualstudio.com/items?itemName=winterdrive.virtual-tabs" target="_blank"
-          rel="noopener" style="position:absolute;inset:0;z-index:3;display:block;"></a>
-        <div class="project-image">
-          <span class="project-category-badge category-independent-project">Independent Project</span>
-          <img
-            src="https://raw.githubusercontent.com/winterdrive/virtual-tabs/fc5b85dfecd2597879557bff72f27e31ad1cea15/assets/virtualtabs_icon.svg"
-            alt="virtual-tabs icon" style="width:100%;height:100%;object-fit:contain;background:#fff;" loading="lazy" />
-          <div class="project-overlay"></div>
+      <div class="projects-grid">
+        <!-- PowerBarcoder -->
+        <div class="project-card" data-category="independent-project" style="position:relative;">
+          <a href="https://github.com/PowerBarcoder/PowerBarcoder_Public" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="PowerBarcoder on GitHub"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-independent-project">Open Source</span>
+            <img src="https://raw.githubusercontent.com/PowerBarcoder/PowerBarcoder_Public/refs/heads/main/assets/hero_banner.png"
+              alt="PowerBarcoder" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>PowerBarcoder</h3>
+            <p>Python · R · Docker · Nature Scientific Data 2024</p>
+            <p>Containerized DNA barcoding pipeline processing 1,496 specimens. Contributed to a global reference database published in <em>Nature Scientific Data</em> (2024).</p>
+          </div>
         </div>
-        <div class="project-content">
-          <h3>virtual-tabs</h3>
-          <p>語言：TypeScript</p>
-          <p>Group open tabs and files in a sidebar view, making it easier to add files with GitHub Copilot.</p>
+        <!-- VirtualTabs -->
+        <div class="project-card" data-category="independent-project" style="position:relative;">
+          <a href="https://winterdrive.github.io/vscode-virtual-tabs/" target="_blank"
+            rel="noopener" class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="VirtualTabs product page"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-independent-project">Open Source</span>
+            <img src="https://winterdrive.github.io/vscode-virtual-tabs/assets/vscode-virtualtabs-grouping-banner1024X512.png" alt="VirtualTabs" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>VirtualTabs</h3>
+            <p>TypeScript · VS Code Marketplace · 4,000+ downloads</p>
+            <p>VS Code extension with a Filesystem Abstraction Layer. Groups related files into persistent virtual directories, optimizing context window efficiency for AI coding agents.</p>
+            <a href="https://github.com/winterdrive/vscode-virtual-tabs" target="_blank" rel="noopener" class="card-github-btn"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
-      </div>
-      <!-- MedicalRecords -->
-      <div class="project-card" data-category="coursework-project" style="position:relative;">
-        <a href="https://github.com/winterdrive/MedicalRecords" target="_blank" rel="noopener"
-          style="position:absolute;inset:0;z-index:3;display:block;"></a>
-        <div class="project-image">
-          <span class="project-category-badge category-coursework-project">Coursework Project</span>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3f6J35lAILQWwSdBx0m9kAhM_ziCphLnBkA&s"
-            alt="MedicalRecords icon" style="width:100%;height:100%;object-fit:contain;background:#fff;"
-            loading="lazy" />
-          <div class="project-overlay"></div>
+        <!-- QuickPrompt -->
+        <div class="project-card" data-category="independent-project" style="position:relative;">
+          <a href="https://winterdrive.github.io/vscode-quick-prompt/" target="_blank"
+            rel="noopener" class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="QuickPrompt product page"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-independent-project">Open Source</span>
+            <img src="https://winterdrive.github.io/vscode-quick-prompt/assets/hero_banner1024X512.png" alt="QuickPrompt" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>QuickPrompt</h3>
+            <p>TypeScript · VS Code Marketplace</p>
+            <p>VS Code extension for managing AI prompts and clipboard history. Combines a prompt library with clipboard tracking, letting developers build a personal prompt database for ChatGPT, Copilot, and Claude without context switching.</p>
+            <a href="https://github.com/winterdrive/vscode-quick-prompt" target="_blank" rel="noopener" class="card-github-btn"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
-        <div class="project-content">
-          <h3>MedicalRecords</h3>
-          <p>語言：Python, Solidity, HTML</p>
-          <p>A simple medical records management system implemented in Python and blockchain technology.</p>
+        <!-- RockPanda-ChatBot -->
+        <div class="project-card" data-category="competition-project" style="position:relative;">
+          <a href="https://github.com/Rock-Cell-Group/RockPanda-ChatBot" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="RockPanda-ChatBot on GitHub"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-competition-project">Hackathon</span>
+            <img src="https://opengraph.githubassets.com/1/Rock-Cell-Group/RockPanda-ChatBot" alt="RockPanda-ChatBot" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>RockPanda-ChatBot</h3>
+            <p>Python · 2023 Meichu Hackathon Champion</p>
+            <p>RAG-powered LINE chatbot for students. Sustained 70+ concurrent users on demo day by combining vector retrieval with LLM-generated responses.</p>
+          </div>
         </div>
-      </div>
-      <!-- RockPanda-ChatBot -->
-      <div class="project-card" data-category="competition-project" style="position:relative;">
-        <a href="https://github.com/Rock-Cell-Group/RockPanda-ChatBot" target="_blank" rel="noopener"
-          style="position:absolute;inset:0;z-index:3;display:block;"></a>
-        <div class="project-image">
-          <span class="project-category-badge category-competition-project">Competition Project</span>
-          <img
-            src="https://raw.githubusercontent.com/Rock-Cell-Group/RockPanda-ChatBot/refs/heads/master/UserManual/panda.jpeg"
-            alt="RockPanda-ChatBot icon" style="width:100%;height:100%;object-fit:cover;background:#fff;"
-            loading="lazy" />
-          <div class="project-overlay"></div>
+        <!-- FineWeb-Edu-Zhtw -->
+        <div class="project-card" data-category="independent-project" style="position:relative;">
+          <a href="https://huggingface.co/datasets/lianghsun/fineweb-edu-zhtw" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="FineWeb-Edu-Zhtw on Hugging Face"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-independent-project">Open Source</span>
+            <img src="https://cdn-uploads.huggingface.co/production/uploads/618dc56cbc345ca7bf95f3cd/qiyOytLYVXOWj1e3lBlLp.jpeg" alt="FineWeb-Edu-Zhtw" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>FineWeb-Edu-Zhtw</h3>
+            <p>Python · Hugging Face Datasets</p>
+            <p>Enterprise contributor to an open-source Traditional Chinese educational corpus. Directed 2 interns through an end-to-end distillation pipeline, refining 48M raw rows down to 1.81M high-quality samples via tri-model consensus and BERT score gating.</p>
+          </div>
         </div>
-        <div class="project-content">
-          <h3>RockPanda-ChatBot</h3>
-          <p>語言：Python</p>
-          <p>2023 hackathon project, a LLM chatbot for students, featuring a LINE interface and RAG (Retrieval-Augmented
-            Generation) capabilities.</p>
+        <!-- OCR-Arcade -->
+        <div class="project-card" data-category="independent-project" style="position:relative;">
+          <a href="https://winterdrive.github.io/OCR-Arcade/" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="OCR-Arcade product page"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-independent-project">Open Source</span>
+            <img src="https://winterdrive.github.io/OCR-Arcade/og-ocr-arcade.png" alt="OCR-Arcade" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>OCR-Arcade</h3>
+            <p>TypeScript · ONNX Runtime Web · Tesseract.js · 2026</p>
+            <p>Privacy-first, browser-based AI tool that converts presentation slides into editable PowerPoint files. WebGPU-accelerated with WASM fallback — zero server cost, all processing on-device.</p>
+            <a href="https://github.com/winterdrive/OCR-Arcade" target="_blank" rel="noopener" class="card-github-btn"><i class="fab fa-github"></i> GitHub</a>
+          </div>
         </div>
-      </div>
-      <!-- PlanetScale-to-Supabase -->
-      <div class="project-card" data-category="independent-project" style="position:relative;">
-        <a href="https://github.com/winterdrive/PlanetScale-to-Supabase" target="_blank" rel="noopener"
-          style="position:absolute;inset:0;z-index:3;display:block;"></a>
-        <div class="project-image">
-          <span class="project-category-badge category-independent-project">Independent Project</span>
-          <img
-            src="https://supabase.com/_next/image?url=https%3A%2F%2Ffrontend-assets.supabase.com%2Fwww%2Ff58eead769dc%2F_next%2Fstatic%2Fmedia%2Flogo-preview.50e72501.jpg&w=3840&q=75&dpl=dpl_7FY8EmFQ6G3YqautJ4Fvh1viLnvu"
-            alt="PlanetScale-to-Supabase icon" style="width:100%;height:100%;object-fit:cover;background:#fff;"
-            loading="lazy" />
-          <div class="project-overlay"></div>
+        <!-- PlanetScale-to-Supabase -->
+        <div class="project-card" data-category="independent-project" style="position:relative;">
+          <a href="https://github.com/winterdrive/PlanetScale-to-Supabase" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="PlanetScale-to-Supabase on GitHub"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-independent-project">Open Source</span>
+            <img src="https://opengraph.githubassets.com/1/winterdrive/PlanetScale-to-Supabase" alt="PlanetScale-to-Supabase" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>PlanetScale → Supabase</h3>
+            <p>Jupyter Notebook · MySQL → PostgreSQL</p>
+            <p>Migration toolkit for moving data from PlanetScale (MySQL) to Supabase (PostgreSQL). Handles schema translation, data type mapping, and foreign key constraints.</p>
+          </div>
         </div>
-        <div class="project-content">
-          <h3>PlanetScale-to-Supabase</h3>
-          <p>語言：Jupyter Notebook</p>
-          <p>Migrate your data from PlanetScale (MySQL) to Supabase (PostgreSQL).</p>
+        <!-- ERP SYSTEM Fontrip -->
+        <div class="project-card" data-category="job-experience" style="position:relative;">
+          <a href="https://erp.fontrip.com/" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="Fontrip ERP System"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-job-experience">Work</span>
+            <img src="https://www.fontrip.com/wp-content/uploads/2023/02/FonTour-WEB-0213-1.jpg" alt="Fontrip ERP" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Fontrip ERP System</h3>
+            <p>Groovy on Grails · 2022–2023</p>
+            <p>End-to-end internal HR & attendance platform serving 80+ employees, with GitLab CI/CD containerized deployments and OTA channel integrations (Klook, Trip.com).</p>
+          </div>
         </div>
-      </div>
-      <!-- myLeetHub -->
-      <div class="project-card" data-category="independent-project" style="position:relative;">
-        <a href="https://github.com/winterdrive/myLeetHub" target="_blank" rel="noopener"
-          style="position:absolute;inset:0;z-index:3;display:block;"></a>
-        <div class="project-image">
-          <span class="project-category-badge category-independent-project">Independent Project</span>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="myLeetHub icon"
-            style="width:100%;height:100%;object-fit:cover;background:#fff;" loading="lazy" />
-          <div class="image-placeholder"></div>
-          <div class="project-overlay"></div>
-        </div>
-        <div class="project-content">
-          <h3>myLeetHub</h3>
-          <p>語言：Python</p>
-          <p>Collection of LeetCode questions to ace the coding interview! - Created using LeetHub.</p>
-        </div>
-      </div>
-      <!-- CFA104G2 -->
-      <div class="project-card" data-category="independent-project" style="position:relative;">
-        <a href="https://github.com/CFA104G2-SmallFarmer/CFA104G2" target="_blank" rel="noopener"
-          style="position:absolute;inset:0;z-index:3;display:block;"></a>
-        <div class="project-image">
-          <span class="project-category-badge category-independent-project">Independent Project</span>
-          <img
-            src="https://raw.githubusercontent.com/CFA104G2-SmallFarmer/CFA104G2/refs/heads/main/src/main/webapp/front-end/assets/images/%E9%80%8F%E6%98%8E%E5%B0%8F%E5%B0%8F%E8%BE%B2.png"
-            alt="RockPanda-ChatBot icon" style="width:100%;height:100%;object-fit:cover;background:#fff;"
-            loading="lazy" />
-          <div class="project-overlay"></div>
-        </div>
-        <div class="project-content">
-          <h3>SmallFarmer</h3>
-          <p>語言：Java</p>
-          <p>A demo site for the CFA104G2 course, showcasing a B2C e-commerce system for farming products.</p>
-        </div>
-      </div>
-      <!-- EtoroTelebot -->
-      <div class="project-card" data-category="independent-project" style="position:relative;">
-        <a href="https://github.com/winterdrive/EtoroTelebot" target="_blank" rel="noopener"
-          style="position:absolute;inset:0;z-index:3;display:block;"></a>
-        <div class="project-image">
-          <img
-            src="https://cdn1.telesco.pe/file/nE1KnHRY9pZvHJEGRXvJVrIXdxp4hQ8ciUCl9Ehkxg-n2jWwwKZym1_-TvJWo2z40lGOI0GI7A-sw7glwja7HohK__Up-mACRqU-GmzXtwAlMV2MgxYoiTLU61AUy6RpnsuY88ggR6EAvU6VsEsItRETTTQB_8SEoDCwfVlqag9a236G5n-MHPZo7MHAwhCAWBn_A1vR32SOce7LeHWvSQFmhMdGHL035H6dIzQ-63IfkL6tVpDIui7gyvOl0gKiYk5sG0u5p4yrCi6SamcV__Y2OKUg5DuW5bDPkR-LkDOkzp6ErTaj9GQaMqFJkW1cpcffk-EMgLInUexcjX0bIQ.jpg"
-            alt="RockPanda-ChatBot icon" style="width:100%;height:100%;object-fit:cover;background:#fff;"
-            loading="lazy" />
-          <div class="project-overlay"></div>
-        </div>
-        <div class="project-content">
-          <h3>EtoroTelebot</h3>
-          <p>語言：Python</p>
-          <p>2022 side project, public version for GitHub, a Telegram bot for monitoring eToro trading accounts.</p>
-        </div>
-      </div>
-      <!-- youbike_2015 -->
-      <div class="project-card" data-category="coursework-project" style="position:relative;">
-        <a href="https://github.com/winterdrive/youbike_2015" target="_blank" rel="noopener"
-          style="position:absolute;inset:0;z-index:3;display:block;"></a>
-        <div class="project-image">
-          <span class="project-category-badge category-coursework-project">Coursework Project</span>
-          <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/5/51/YouBike.svg/1200px-YouBike.svg.png"
-            alt="youbike_2015 icon" style="width:100%;height:100%;object-fit:cover;background:#fff;" loading="lazy" />
-          <div class="project-overlay"></div>
-        </div>
-        <div class="project-content">
-          <h3>youbike_2015</h3>
-          <p>語言：R</p>
-          <p>A group report from nearly a decade ago, analyzing YouBike data from 2015.</p>
-        </div>
-      </div>
-      <!-- ERP SYSTEM Fontrip -->
-      <div class="project-card" data-category="job-experience" style="position:relative;">
-        <a href="https://erp.fontrip.com/" target="_blank" rel="noopener"
-          style="position:absolute;inset:0;z-index:3;display:block;"></a>
-        <div class="project-image">
-          <span class="project-category-badge category-job-experience">Job Experience</span>
-          <img src="https://erp.fontrip.com/assets/fontrip-logo-3474b26dee0f0045e0585433863ce017.png"
-            alt="ERP SYSTEM Fontrip icon" style="width:100%;height:100%;object-fit:cover;background:#fff;"
-            loading="lazy" />
-          <div class="project-overlay"></div>
-        </div>
-        <div class="project-content">
-          <h3>Fontrip&#169;ERP SYSTEM </h3>
-          <p>語言：Groovy on Grails</p>
-          <p>A comprehensive ERP system for managing Fontrip's operations.</p>
-        </div>
-      </div>
-      <!-- TW FERN Kuo Fern Lab -->
-      <div class="project-card" data-category="job-experience" style="position:relative;">
-        <a href="https://www.twfern.org/" target="_blank" rel="noopener"
-          style="position:absolute;inset:0;z-index:3;display:block;"></a>
-        <div class="project-image">
-          <span class="project-category-badge category-job-experience">Job Experience</span>
-          <img src="https://www.twfern.org/images/favicon.png" alt="TW FERN Kuo Fern Lab icon"
-            style="width:100%;height:100%;object-fit:cover;background:#fff;" loading="lazy" />
-          <div class="project-overlay"></div>
-        </div>
-        <div class="project-content">
-          <h3>TW FERN&#169;Kuo Fern Lab</h3>
-          <p>語言：PHP with MariaDB</p>
-          <p>A research lab website for Kuo Fern Lab, maintained by Winston Tang.</p>
+        <!-- TW FERN Kuo Fern Lab -->
+        <div class="project-card" data-category="job-experience" style="position:relative;">
+          <a href="https://www.twfern.org/" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="TW FERN Kuo Fern Lab"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-job-experience">Work</span>
+            <img src="https://www.twfern.org/images/facebook.png" alt="TW FERN" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>TW FERN — Kuo Fern Lab</h3>
+            <p>PHP · MariaDB · 2019–2022</p>
+            <p>Bioinformatics research lab portal. Containerized legacy Apache/PHP/MySQL stack into isolated Docker environments for production and development.</p>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Awards Group -->
+    <div class="project-section-group" data-group="awards">
+      <div class="section-header" style="margin-top: 3rem;">
+        <h2 class="section-title" style="font-size: 1.5rem;">Awards &amp; Competitions</h2>
+        <p class="section-subtitle">Hackathons and enterprise data competitions</p>
+      </div>
+      <div class="projects-grid">
+        <!-- TWM Data Games -->
+        <div class="project-card" data-category="competition-project" style="position:relative;">
+          <div class="project-image">
+            <span class="project-category-badge category-competition-project">Enterprise</span>
+            <img src="https://media.licdn.com/dms/image/v2/D4E05AQGydS_GG_byhQ/videocover-high/videocover-high/0/1728022016277?e=2147483647&v=beta&t=ODgAe1Qtpw8OI3D6Odzffq-bL_p6vjBuILhr-3__QlI" alt="TWM Data Games" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>TWM Data Games</h3>
+            <p>1st Place 2024 · 2nd Place 2025</p>
+            <p>Enterprise-wide ML competition. Soft-Voting ensemble + LLM-assisted annotation pipeline delivering <strong>70× faster inference</strong> vs. LLM-only approaches, within 0.3% precision parity.</p>
+          </div>
+        </div>
+        <!-- 2024 OP HACKBRATION -->
+        <div class="project-card" data-category="competition-project" style="position:relative;">
+          <div class="project-image">
+            <span class="project-category-badge category-competition-project">Hackathon</span>
+            <img src="https://media.licdn.com/dms/image/v2/D5622AQFsKE3hwRVKlA/feedshare-shrink_800/feedshare-shrink_800/0/1729052401192?e=2147483647&v=beta&t=n9dve0sW1RbwvOud7Bjfb4cHZGhS510psfliCmRUcHY" alt="2024 OP HACKBRATION" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>2024 OP HACKBRATION</h3>
+            <p>1st Place · AI Human-Computer Collaboration Tool</p>
+            <p>Led a cross-functional team to build a browser extension integrating client-side NLP pipeline for privacy-preserving prompt optimization. Secured 1st place in the enterprise hackathon.</p>
+          </div>
+        </div>
+        <!-- 2023 Meichu Hackathon -->
+        <div class="project-card" data-category="competition-project" style="position:relative;">
+          <a href="https://github.com/Rock-Cell-Group/RockPanda-ChatBot" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="RockPanda-ChatBot on GitHub"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-competition-project">Hackathon</span>
+            <img src="https://2023.meichuhackathon.org/assets/images/group_photo.jpg" alt="2023 Meichu Hackathon" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>2023 Meichu Hackathon</h3>
+            <p>1st Place · RockPanda-ChatBot</p>
+            <p>Taiwan's largest student hackathon. Built a LINE RAG chatbot sustaining 70+ concurrent users, combining vector retrieval with LLM response generation.</p>
+          </div>
+        </div>
+        <!-- 2023 OP Hackathon -->
+        <div class="project-card" data-category="competition-project" style="position:relative;">
+          <div class="project-image">
+            <span class="project-category-badge category-competition-project">Hackathon</span>
+            <img src="https://media.licdn.com/dms/image/v2/D5622AQEDOkmkqh4ZAw/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1691715610715?e=2147483647&v=beta&t=S6Lz1plZSHt-ayBle34WUsjQK3PmZKNgJBm2CL3QCNY" alt="2023 OP Hackathon" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>2023 OP Hackathon</h3>
+            <p>1st Place (30 teams) · SMS Anti-Fraud</p>
+            <p>Fine-tuned BERT model for SMS fraud classification with data augmentation strategies and NLP pipeline. Ranked 1st among 30 competing teams.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Talks & Publications Group -->
+    <div class="project-section-group" data-group="research">
+      <div class="section-header" style="margin-top: 3rem;">
+        <h2 class="section-title" style="font-size: 1.5rem;">Talks &amp; Publications</h2>
+        <p class="section-subtitle">Public speaking, academic journals, and conference proceedings</p>
+      </div>
+      <div class="projects-grid">
+        <!-- SITCON 2024 -->
+        <div class="project-card" data-category="publication" style="position:relative;">
+          <a href="https://sitcon.org/2024/agenda/586ef6/" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="SITCON 2024 Talk"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-talk">Talk</span>
+            <img src="https://sitcon.org/2024/sessions/586ef6.png" alt="SITCON 2024" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>SITCON 2024</h3>
+            <p>Public Talk · March 2024</p>
+            <p>"Exploring the Post-Heroku Era: Practices for Free PaaS Solutions" — Free-tier cloud deployment, CI/CD pipelines, and open-source toolchain selection in production.</p>
+          </div>
+        </div>
+        <!-- Nature Scientific Data 2024 -->
+        <div class="project-card" data-category="publication" style="position:relative;">
+          <a href="https://doi.org/10.1038/s41597-024-04161-8" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="Nature Scientific Data 2024"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-publication">Nature · 2024</span>
+            <img src="https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41597-024-04161-8/MediaObjects/41597_2024_4161_Fig1_HTML.png" alt="Scientific Data Nature 2024" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Scientific Data (Nature)</h3>
+            <p>Co-author · December 2024</p>
+            <p>A DNA barcode reference of Asian ferns — a global reference database of 1,496 voucher specimens and DNA samples.</p>
+          </div>
+        </div>
+        <!-- Plants 2022 -->
+        <div class="project-card" data-category="publication" style="position:relative;">
+          <a href="https://doi.org/10.3390/plants12010140" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="Plants MDPI 2022"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-publication">Plants · 2022</span>
+            <img src="https://pub.mdpi-res.com/img/journals/plants-logo.png" alt="Plants MDPI" style="width:100%;height:100%;object-fit:contain;padding:15%;background:#fff;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Plants (MDPI)</h3>
+            <p>First Author · December 2022</p>
+            <p>Fern Spores as "Ready-to-Use" Standards for Plant Genome Size Estimation via flow cytometry.</p>
+          </div>
+        </div>
+        <!-- Systematic Botany & APS 2021 -->
+        <div class="project-card" data-category="publication" style="position:relative;">
+          <a href="https://doi.org/10.1600/036364421X16312067913534" target="_blank" rel="noopener"
+            class="project-card-link" style="position:absolute;inset:0;z-index:3;display:block;" aria-label="Systematic Botany 2021"></a>
+          <div class="project-image">
+            <span class="project-category-badge category-publication">Journals · 2021</span>
+            <img src="https://www.ingentaconnect.com/images/journal-logos/aspt/sb.png" alt="Systematic Botany" style="width:100%;height:100%;object-fit:contain;padding:15%;background:#fff;" loading="lazy" />
+            <div class="project-overlay"></div>
+          </div>
+          <div class="project-content">
+            <h3>Systematic Botany &amp; APS</h3>
+            <p>Co-author · 2021</p>
+            <p>Two co-authored papers on fern bioinformatics, published in <em>Systematic Botany</em> and <em>Applications in Plant Sciences</em>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>

@@ -90,17 +90,12 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg,
-      var(--bg-dark) 0%,
-      var(--bg-secondary) 25%,
-      var(--bg-tertiary) 50%,
-      var(--bg-quaternary) 75%,
-      var(--bg-accent) 100%);
+  background: var(--bg-dark);
   min-height: 100vh;
   overflow-x: hidden;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: relative;  color: var(--text-primary);
-  /* 使用預設游標 */
+  position: relative;
+  color: var(--text-primary);
 }
 
 /* 全域工具類 */
@@ -117,39 +112,7 @@ body {
   padding: 0 var(--spacing-lg);
 }
 
-/* 專案類別標籤樣式（同步新命名） */
-.project-category-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  padding: 4px 14px;
-  border-radius: 16px;
-  font-size: 0.9em;
-  font-weight: bold;
-  color: #fff;
-  z-index: var(--z-badge);
-  box-shadow: var(--shadow-sm);
-  letter-spacing: 0.5px;
-  opacity: 0.95;
-  pointer-events: none;
-}
-
-.category-independent-project {
-  background: #007bff;
-}
-
-.category-coursework-project {
-  background: #28a745;
-}
-
-.category-competition-project {
-  background: #ffc107;
-  color: #222;
-}
-
-.category-job-experience {
-  background: #6c757d;
-}
+/* Badge 樣式統一由 components.css 管理 */
 
 /* 讓 project-image 支援絕對定位標籤 */
 .project-image {

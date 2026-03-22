@@ -85,6 +85,23 @@
   transform: translateY(-2px);
 }
 
+.nav-link.active {
+  color: var(--primary-color);
+  background: rgba(100, 255, 218, 0.08);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 1px;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -98,6 +115,343 @@
   margin: 3px 0;
   transition: var(--transition-normal);
   border-radius: 2px;
+}
+
+/* ========== CTA 按鈕 ========== */
+.cta-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  border: none;
+}
+
+.cta-btn-primary {
+  background: var(--primary-color);
+  color: var(--bg-dark);
+}
+
+.cta-btn-primary:hover {
+  background: #4de8c4;
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(100, 255, 218, 0.35);
+  text-decoration: none;
+}
+
+.cta-btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(100, 255, 218, 0.35);
+}
+
+.cta-btn-secondary:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ========== Hero Bento Grid ========== */
+.bento-hero {
+  max-width: 1100px;
+  margin: 0 auto 3rem;
+  padding: 0 var(--spacing-lg);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "identity stats"
+    "stack    links";
+  gap: 1rem;
+}
+
+.bento-cell {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(100, 255, 218, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+}
+
+.bento-cell:hover {
+  border-color: rgba(100, 255, 218, 0.35);
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.06);
+  transform: translateY(-1px);
+}
+
+.bento-cell-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+/* Identity cell */
+.bento-identity {
+  grid-area: identity;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bento-identity-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bento-avatar {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--bg-dark);
+  letter-spacing: 0.02em;
+}
+
+.bento-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 0.2rem;
+  letter-spacing: -0.01em;
+}
+
+.bento-role {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.bento-company {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0.15rem 0 0;
+}
+
+.bento-bio {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Stats cell */
+.bento-stats {
+  grid-area: stats;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bento-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.bento-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.bento-stat-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.bento-stat-desc {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.bento-stat-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.bento-stat-badge {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  background: rgba(100, 255, 218, 0.06);
+  border: 1px solid rgba(100, 255, 218, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 0.35rem 0.7rem;
+  line-height: 1.4;
+}
+
+/* Stack cell */
+.bento-stack {
+  grid-area: stack;
+}
+
+.bento-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.bento-tag {
+  padding: 0.25rem 0.7rem;
+  background: rgba(100, 255, 218, 0.08);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Links cell */
+.bento-links {
+  grid-area: links;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bento-link-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 0.45rem 0.6rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.bento-link-row i {
+  width: 16px;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.bento-link-row:hover {
+  color: var(--primary-color);
+  background: rgba(100, 255, 218, 0.07);
+  text-decoration: none;
+}
+
+/* Responsive bento */
+@media (max-width: 768px) {
+  .bento-hero {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "identity"
+      "stats"
+      "stack"
+      "links";
+  }
+
+  .bento-name {
+    font-size: 1.3rem;
+  }
+}
+
+/* Light theme bento overrides */
+body.light-theme .bento-cell {
+  background: #ffffff;
+  border: 1px solid #e8eaed;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+body.light-theme .bento-cell:hover {
+  border-color: #c4c9d4;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+body.light-theme .bento-cell-label {
+  color: #6b7280;
+  opacity: 1;
+}
+
+body.light-theme .bento-name {
+  color: #111827;
+}
+
+body.light-theme .bento-role {
+  color: #4f46e5;
+}
+
+body.light-theme .bento-company {
+  color: #9ca3af;
+}
+
+body.light-theme .bento-bio {
+  color: #374151;
+}
+
+body.light-theme .bento-stat-num {
+  color: #111827;
+}
+
+body.light-theme .bento-stat-desc {
+  color: #9ca3af;
+}
+
+body.light-theme .bento-stat-badge {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  color: #4b5563;
+}
+
+body.light-theme .bento-tag {
+  background: #f3f4f6;
+  border-color: #e5e7eb;
+  color: #374151;
+}
+
+body.light-theme .bento-avatar {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+}
+
+body.light-theme .bento-link-row {
+  color: #374151;
+}
+
+body.light-theme .bento-link-row i {
+  color: #4f46e5;
+}
+
+body.light-theme .bento-link-row:hover {
+  background: #f3f4f6;
+  color: #111827;
 }
 
 /* ========== 按鈕組件 ========== */
@@ -215,7 +569,7 @@
 }
 
 .tech-button:hover .tech-button-content i {
-  transform: scale(1.1) rotateY(360deg);
+  transform: scale(1.15);
 }
 
 /* 修正文字樣式以匹配實際HTML結構 */
@@ -494,6 +848,84 @@
   }
 }
 
+/* ========== Skeleton Loading ========== */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+.skeleton-block {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.04) 25%,
+    rgba(255,255,255,0.08) 50%,
+    rgba(255,255,255,0.04) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-loader {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem var(--spacing-lg);
+}
+
+.skeleton-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.skeleton-title {
+  height: 2.2rem;
+  width: 200px;
+  margin: 0 auto 0.75rem;
+}
+
+.skeleton-subtitle {
+  height: 1rem;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.skeleton-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.skeleton-img {
+  height: 200px;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.04) 25%,
+    rgba(255,255,255,0.07) 50%,
+    rgba(255,255,255,0.04) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton-lines {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skeleton-lines .skeleton-block {
+  height: 0.85rem;
+  border-radius: 4px;
+}
+
+.skeleton-lines .skeleton-short {
+  width: 60%;
+}
+
 /* ========== 專案容器 ========== */
 #projects-container {
   position: relative;
@@ -559,14 +991,18 @@
   border: 1px solid rgba(100, 255, 218, 0.2);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: all var(--transition-cubic);
+  /* 只 transition 需要的屬性，避免 backdrop-filter 造成跳幀 */
+  transition: transform var(--transition-cubic),
+              box-shadow var(--transition-cubic),
+              border-color var(--transition-normal);
   cursor: pointer;
   position: relative;
   transform: translateY(0);
-  border: 2px solid var(--primary-color) !important;
-  /* 調試用邊框 */
-  background: rgba(255, 255, 255, 0.1) !important;
-  /* 更明顯的背景 */
+}
+
+/* 移除 <a> overlay 的繼承 transition，它只是點擊區域不需要動畫 */
+.project-card-link {
+  transition: none !important;
 }
 
 .project-card:hover {
@@ -605,15 +1041,51 @@
   opacity: 0.5;
 }
 
+/* Consistent icon placeholder for cards without real images */
+.card-icon-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ========== Project Category Badges ========== */
+.project-category-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(30, 30, 50, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.category-independent-project { border-color: rgba(100, 255, 218, 0.5); color: #64ffda; }
+.category-competition-project  { border-color: rgba(255, 193, 7, 0.5);   color: #ffc107; }
+.category-job-experience       { border-color: rgba(83, 109, 254, 0.5);  color: #849bff; }
+.category-talk                 { border-color: rgba(255, 64, 129, 0.5);  color: #ff6eb4; }
+.category-publication          { border-color: rgba(0, 230, 118, 0.5);   color: #00e676; }
+
 .project-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  /* 提高不透明度，確保在暗色佔位圖上也可見 */
   background: linear-gradient(135deg,
-      rgba(100, 255, 218, 0.1),
-      rgba(83, 109, 254, 0.1));
+      rgba(100, 255, 218, 0.18),
+      rgba(83, 109, 254, 0.12));
   opacity: 0;
   transition: opacity var(--transition-normal);
 }
@@ -629,11 +1101,9 @@
 .project-content h3 {
   font-size: var(--font-xl);
   font-weight: 600;
-  color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
   line-height: 1.3;
-  color: var(--primary-color) !important;
-  /* 確保標題可見 */
+  color: var(--primary-color);
 }
 
 .project-content h3 a {
@@ -651,39 +1121,102 @@
   line-height: 1.6;
   margin-bottom: var(--spacing-xs);
   font-size: var(--font-base);
-  color: var(--text-primary) !important;
-  /* 確保文字可見 */
+}
+
+/* metadata 行（第一個 p）：縮小、降色、允許自然換行 */
+.project-content p:first-of-type {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .project-content p:last-child {
   margin-bottom: 0;
 }
 
-/* 專案類別過濾器（預留） */
+/* GitHub icon button — 浮在 card-link overlay 上方 */
+.card-github-btn {
+  position: relative;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.65rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  text-decoration: none !important;
+  transition: background var(--transition-normal),
+              color var(--transition-normal),
+              border-color var(--transition-normal);
+}
+
+.card-github-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: var(--text-primary) !important;
+  text-decoration: none !important;
+}
+
+body.light-theme .card-github-btn {
+  color: #555 !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+}
+
+body.light-theme .card-github-btn:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(0, 0, 0, 0.28) !important;
+  color: #222 !important;
+}
+
+/* 專案類別過濾器 */
 .project-filter {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
+  gap: 0.5rem;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
   flex-wrap: wrap;
 }
 
 .filter-btn {
-  padding: var(--spacing-xs) var(--spacing-md);
+  padding: 0.4rem 1.1rem;
   background: transparent;
-  border: 1px solid rgba(100, 255, 218, 0.3);
-  border-radius: var(--radius-md);
+  border: 1px solid rgba(100, 255, 218, 0.25);
+  border-radius: 999px;
   color: var(--text-secondary);
   cursor: pointer;
   transition: all var(--transition-normal);
-  font-size: var(--font-sm);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
-.filter-btn:hover,
+.filter-btn:hover {
+  border-color: rgba(100, 255, 218, 0.6);
+  color: var(--primary-color);
+}
+
 .filter-btn.active {
-  background: rgba(100, 255, 218, 0.1);
+  background: rgba(100, 255, 218, 0.12);
   border-color: var(--primary-color);
   color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Filter visibility */
+.project-card.filter-hidden,
+.project-section-group.filter-hidden {
+  display: none;
 }
 
 /* 響應式設計 */

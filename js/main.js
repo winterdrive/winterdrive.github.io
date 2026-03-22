@@ -768,6 +768,46 @@ class App {
 // 導出 App 類別供外部使用，但不自動創建實例
 window.App = App;
 
+/**
+ * Project Filter — 初始化 filter bar 互動
+ * 在 projects 組件注入後呼叫
+ */
+function initProjectFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  const groups = document.querySelectorAll('.project-section-group');
+
+  if (!filterBtns.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      // Update active button
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+
+      // Show / hide cards
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.category === filter;
+        card.classList.toggle('filter-hidden', !match);
+      });
+
+      // Show / hide section groups based on whether they have visible cards
+      groups.forEach(group => {
+        const hasVisible = group.querySelectorAll('.project-card:not(.filter-hidden)').length > 0;
+        group.classList.toggle('filter-hidden', !hasVisible);
+      });
+    });
+  });
+}
+
+window.initProjectFilter = initProjectFilter;
+
 // 導出供其他地方使用
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = App;
